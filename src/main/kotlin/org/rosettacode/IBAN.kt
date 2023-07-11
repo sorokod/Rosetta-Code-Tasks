@@ -5,11 +5,7 @@ import java.lang.IllegalArgumentException
 import java.math.BigInteger
 
 sealed class Outcome {
-
-    object Ok : Outcome() {
-        override fun toString(): String = "Ok"
-    }
-
+    data object Ok : Outcome()
     data class Fail(val error: String) : Outcome()
 }
 

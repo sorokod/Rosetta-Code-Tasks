@@ -1,6 +1,8 @@
-package rosettacode
+package org.rosettacode
 
 import io.kotest.core.spec.style.FunSpec
+import io.kotest.data.row
+import io.kotest.datatest.withData
 import io.kotest.inspectors.forAll
 import io.kotest.matchers.shouldBe
 import org.rosettacode.rle
@@ -18,5 +20,4 @@ class RleTest : FunSpec({
             rle(input) shouldBe expected
         }
     }
-
 })
