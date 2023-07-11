@@ -89,18 +89,5 @@ fun validate(iban: String): Outcome {
 }
 
 fun main() {
-    Registry["GB"] = Validator("GB2!n4!a6!n8!n")
-    Registry["DE"] = Validator("DE2!n8!n10!n")
-
-    validate("GB82WEST12345698765432").also { println(it) } // Ok
-    validate("GB82 WEST 1234 5698 7654 32").also { println(it) } // Ok
-
-    validate("DE89370400440532013000").also { println(it) } // Ok
-
-    validate("XX82WEST1234569A765432").also { println(it) } // Unknown Country Code: XX
-    validate("GB82").also { println(it) } // IBAN is too short
-    validate("GB82WEST1234569A765432").also { println(it) }  // failed rule: [0-9]{8}
-    validate("GB82WE5T1234569A765432").also { println(it) }  // failed rule: [A-Z]{4}
-    validate("GB82WEST123456987654329").also { println(it) } // IBAN is too long
-    validate("GB80WEST12345698765432").also { println(it) }  // Invalid Check Digits
+    // see test
 }
